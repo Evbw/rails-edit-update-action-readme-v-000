@@ -770,3 +770,28 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
   Rendered posts/edit.html.erb within layouts/application (11.2ms)
 Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for 104.200.153.108 at 2018-10-05 02:49:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/edit.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 303ms (Views: 280.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for 104.200.153.108 at 2018-10-05 02:49:38 +0000
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 104.200.153.108 at 2018-10-05 02:49:45 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m/PLwo6kF+odNhxLa7n65wwhcxq3bKcatUueYj+AIqGvasCHCWdubtqBFnAcVhUvECW1QlyvZ2feaQSH6AhxLg==", "title"=>"My Title", "description"=>"My Decription", "commit"=>"Submit Post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "My Title"], ["description", "My Decription"], ["created_at", "2018-10-05 02:49:45.282529"], ["updated_at", "2018-10-05 02:49:45.282529"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.152.27:41060/posts/3
+Completed 302 Found in 6ms (ActiveRecord: 2.6ms)
